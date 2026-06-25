@@ -1,95 +1,110 @@
-# Fitness Microservices Platform
+# AI Fitness Microservices Platform
 
-A scalable fitness tracking application built using Spring Boot Microservices architecture.
+A production-inspired full-stack fitness management platform built using Java Spring Boot Microservices architecture. The application enables users to track fitness activities, receive AI-powered recommendations, and securely access services through OAuth2 authentication.
 
 ## Features
 
-* User Registration and Login
-* JWT Authentication
-* Workout Management
-* Nutrition Tracking
-* Goal Tracking
-* Progress Analytics
-* API Gateway
-* Service Discovery
+- User Registration & Login
+- Secure Authentication using Keycloak
+- API Gateway
+- Service Discovery with Eureka
+- Centralized Configuration Server
+- RabbitMQ Asynchronous Communication
+- AI-powered Fitness Recommendations using Gemini API
+- Activity Tracking
+- Responsive React Frontend
+- RESTful APIs
+- MySQL Database
+
+---
+
+## Architecture
+
+```
+React Frontend
+        │
+        ▼
+   API Gateway
+        │
+ ┌──────┼─────────┐
+ ▼      ▼         ▼
+User  Activity   AI
+Service Service Service
+        │
+    RabbitMQ
+        │
+        ▼
+   Gemini API
+
+Eureka Server
+Config Server
+```
+
+---
 
 ## Tech Stack
 
 ### Backend
-
-* Java 17
-* Spring Boot
-* Spring Security
-* Spring Cloud
-* MySQL
+- Java 21
+- Spring Boot
+- Spring Security
+- Spring Cloud
+- Spring Data JPA
+- Hibernate
 
 ### Frontend
+- React
+- Redux
+- Axios
 
-* React.js
+### Cloud & DevOps
+- Docker
+- RabbitMQ
+- Keycloak
+- Eureka
+- Config Server
 
-### DevOps
+### AI
+- Gemini API
 
-* Docker
-* GitHub Actions
+### Database
+- MySQL
+
+---
 
 ## Microservices
 
-### User Service
+- User Service
+- Activity Service
+- AI Recommendation Service
+- API Gateway
+- Eureka Discovery Server
+- Config Server
 
-Handles authentication and profile management.
+---
 
-### Workout Service
+## Screenshots
 
-Manages workouts and exercise history.
+(Add screenshots here)
 
-### Nutrition Service
-
-Tracks calorie intake and meal plans.
-
-### Analytics Service
-
-Generates fitness progress reports.
-
-## Architecture
-                    ┌─────────────────┐
-                    │   React Frontend│
-                    └────────┬────────┘
-                             │
-                             ▼
-                  ┌───────────────────┐
-                  │   API Gateway     │
-                  │ Spring Cloud      │
-                  └────────┬──────────┘
-                           │
-         ┌─────────────────┼─────────────────┐
-         │                 │                 │
-         ▼                 ▼                 ▼
-
- ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
- │ User Service│   │Workout Serv.│   │NutritionSvc │
- └──────┬──────┘   └──────┬──────┘   └──────┬──────┘
-        │                 │                 │
-        ▼                 ▼                 ▼
- ┌─────────────┐   ┌─────────────┐   ┌─────────────┐
- │ User DB     │   │ Workout DB  │   │ NutritionDB │
- │ MySQL       │   │ MySQL       │   │ MySQL       │
- └─────────────┘   └─────────────┘   └─────────────┘
-
-                           │
-                           ▼
-
-                  ┌──────────────────┐
-                  │ Analytics Service │
-                  └─────────┬────────┘
-                            │
-                            ▼
-                     Analytics DB
-
+---
 
 ## Future Enhancements
 
-* AI Workout Recommendations
-* Wearable Device Integration
-* Social Fitness Challenges
+- Workout Planner
+- Nutrition Recommendation
+- Progress Dashboard
+- BMI Calculator
+- AI Chat Assistant
+- Email Notifications
+- Docker Compose Deployment
+- Kubernetes Deployment
 
+---
 
+## Author
+
+Shalini Rani
+
+GitHub:
+https://github.com/SHAL1907
